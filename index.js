@@ -1,4 +1,4 @@
-let screen = document.getElementById('screen-text').innerHTML;
+let screen = document.getElementById('screen');
 let box_1 = document.getElementById('box-1');
 let box_2 = document.getElementById('box-2');
 let box_3 = document.getElementById('box-3');
@@ -17,9 +17,105 @@ let box_15= document.getElementById('box-15');
 let box_16= document.getElementById('box-16');
 let box_17= document.getElementById('box-17');
 let box_18= document.getElementById('box-18');
-let toggle = document.getElementById('toggle-button');
-toggle.addEventListener('click', ()=>{
-    let position = 1;
+let toggle_div = document.getElementById('toggle-div');
+let toggle_button = document.getElementById('toggle-button');
+let body = document.getElementById('body');
+let heading = document.getElementById('heading');
+let toggle_section = document.getElementById('toggle-section');
+let toggle_list = document.getElementById('toggle-list');
+let text = document.getElementById('screen-text');
+let keypad = document.getElementById('keypad');
+let boxes = document.getElementsByClassName('box');
+let del_box = document.getElementById('box-4');
+let reset_box = document.getElementById('box-17');
+let equal_box = document.getElementById('box-18');
+let calc_text = document.getElementById('calc-text');
+let theme_text = document.getElementById('theme-text');
+let i;
+// toggle function
+let count = 1;
+toggle_div.addEventListener('click', ()=>{
+    count = count + 1;
+    if (count == 1){
+        toggle_div.style.justifyContent = 'flex-start';
+        toggle_button.style.backgroundColor = 'hsl(6, 63%, 50%)';
+        body.style.backgroundColor = 'hsl(222, 26%, 31%)';
+        toggle_div.style.backgroundColor = 'hsl(223, 31%, 20%)';
+        keypad.style.backgroundColor = 'hsl(223, 31%, 20%)';
+        screen.style.backgroundColor = 'hsl(224, 36%, 15%)';
+        for (let i = 0; i<boxes.length; i++){
+            boxes[i].style.backgroundColor = 'hsl(30, 25%, 89%)';
+            boxes[i].style.boxShadow = '0.1vw 1.3vw 0  hsl(28, 16%, 65%';
+            boxes[i].style.color = 'hsl(221, 14%, 31%)';
+        }
+        del_box.style.backgroundColor='hsl(225, 21%, 49%)';
+        del_box.style.boxShadow='0.1vw 1.3vw 0 hsl(224, 28%, 35%)';
+        del_box.style.color = 'white';
+        reset_box.style.backgroundColor='hsl(225, 21%, 49%)';
+        reset_box.style.boxShadow='0.1vw 1.3vw 0 hsl(224, 28%, 35%)';
+        reset_box.style.color = 'white';
+        equal_box.style.backgroundColor='hsl(6, 63%, 50%)';
+        equal_box.style.boxShadow='0.1vw 1.3vw 0 hsl(6, 70%, 34%)';
+        equal_box.style.color = 'white';
+        text.style.color = 'white';
+        toggle_list.style.color = 'white';
+        calc_text.style.color = 'white';
+        theme_text.style.color = 'white';
+        
+    }
+    else if(count == 2){
+        toggle_div.style.justifyContent = 'center';
+        toggle_button.style.backgroundColor = 'hsl(25, 98%, 40%)';
+        body.style.backgroundColor = 'hsl(0, 0%, 90%)';
+        toggle_div.style.backgroundColor ='hsl(0, 5%, 81%)';
+        keypad.style.backgroundColor = 'hsl(0, 5%, 81%)';
+        screen.style.backgroundColor = 'hsl(0, 0%, 93%)';
+        for (let i = 0; i<boxes.length; i++){
+            boxes[i].style.backgroundColor = 'hsl(45, 7%, 89%)';
+            boxes[i].style.boxShadow = '0.1vw 1.3vw 0 hsl(35, 11%, 61%)';
+            boxes[i].style.color = 'hsl(60, 10%, 19%)';
+        }
+        del_box.style.backgroundColor='hsl(185, 42%, 37%)';
+        del_box.style.boxShadow='0.1vw 1.3vw 0 hsl(185, 58%, 25%)';
+        del_box.style.color = 'white';
+        reset_box.style.backgroundColor='hsl(185, 42%, 37%)';
+        reset_box.style.boxShadow='0.1vw 1.3vw 0 hsl(185, 58%, 25%)';
+        reset_box.style.color = 'white';
+        equal_box.style.backgroundColor='hsl(25, 98%, 40%)';
+        equal_box.style.boxShadow='0.1vw 1.3vw 0 hsl(25, 99%, 27%)';
+        equal_box.style.color = 'white';
+        text.style.color = ' hsl(60, 10%, 19%)';
+        toggle_list.style.color = ' hsl(60, 10%, 19%)';
+        calc_text.style.color = ' hsl(60, 10%, 19%)';
+        theme_text.style.color = ' hsl(60, 10%, 19%)';
+    }
+    else if(count == 3){
+        count = 0;
+        toggle_div.style.justifyContent = 'flex-end';
+        toggle_button.style.backgroundColor = 'hsl(176, 100%, 44%)';
+        body.style.backgroundColor = 'hsl(268, 75%, 9%)';
+        toggle_div.style.backgroundColor ='hsl(268, 71%, 12%)';
+        keypad.style.backgroundColor = ' hsl(268, 71%, 12%)';
+        screen.style.backgroundColor = 'hsl(268, 71%, 12%)';
+        for (let i = 0; i<boxes.length; i++){
+            boxes[i].style.backgroundColor = 'hsl(268, 47%, 21%)';
+            boxes[i].style.boxShadow = '0.1vw 1.3vw 0 hsl(290, 70%, 36%)';
+            boxes[i].style.color = 'hsl(52, 100%, 62%)';
+        }
+        del_box.style.backgroundColor='hsl(281, 89%, 26%)';
+        del_box.style.boxShadow='0.1vw 1.3vw 0 hsl(285, 91%, 52%)';
+        del_box.style.color = 'white';
+        reset_box.style.backgroundColor='hsl(281, 89%, 26%)';
+        reset_box.style.boxShadow='0.1vw 1.3vw 0 hsl(285, 91%, 52%)';
+        reset_box.style.color = 'white';
+        equal_box.style.backgroundColor='hsl(176, 100%, 44%)';
+        equal_box.style.boxShadow='0.1vw 1.3vw 0 hsl(177, 92%, 70%)';
+        equal_box.style.color = 'hsl(198, 20%, 13%)';
+        text.style.color = ' hsl(52, 100%, 62%)';
+        toggle_list.style.color = ' hsl(52, 100%, 62%)';
+        calc_text.style.color = ' hsl(52, 100%, 62%)';
+        theme_text.style.color = ' hsl(52, 100%, 62%)';
+    }
 
 })
 box_1.addEventListener('click', ()=>{
