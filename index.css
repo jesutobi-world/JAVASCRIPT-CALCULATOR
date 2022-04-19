@@ -148,7 +148,7 @@ main{
     font-size: 11vw;
     text-align: end ;
     color: var(--white-text-1);
-    overflow: scroll;
+    overflow-x: scroll;
 }
 #keypad{
     padding: 6vw;
@@ -217,4 +217,3 @@ main{
     color: var(--white-text-1);
     font-weight: 500;
 }
-
