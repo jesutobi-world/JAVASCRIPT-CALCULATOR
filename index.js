@@ -128,7 +128,7 @@ box_13.addEventListener('click', ()=>{
         new_string = screen_text;
     }
     else if (screen_text == '0'){
-        new_string = '.';
+        new_string = '0.';
     }
     else{
         new_string = screen_text + '.';
@@ -214,19 +214,51 @@ box_18.addEventListener('click', ()=>{
     let screen_text = document.getElementById('screen-text').innerHTML;
     let new_string;
     new_string= eval(screen_text);
-    if((new_string.length > 12) && (new_string.includes('.'))){
-        new_string = new_string.slice(0, 11);
+    if (decimal_check(new_string) == false){
+        document.getElementById('screen-text').innerHTML = new_string;
     }
-    document.getElementById('screen-text').innerHTML = new_string;
+    else{
+        large_decimal(new_string);
+    }
 })
-
-// function to round up
-function precise_round(n, r) {
-    let int = Math.floor(n).toString()
-    if (typeof n !== 'number' || typeof r !== 'number') return 'Not a Number'
-    if (int[0] == '-' || int[0] == '+') int = int.slice(int[1], int.length)
-    return n.toPrecision(int.length + r)
+function decimal_check(parameter){
+    let stringed = parameter.toString();
+    if (stringed.includes('.')){
+        return true;
+    }
+    else{
+        return false;
+    }
 }
-
+function large_decimal(value){
+    let decimal_list = value.toString().split('.');
+    let part_1 = Number(decimal_list[0]);
+    let part_2 = Number(decimal_list[1]);
+    if (decimal_list[1].length > 7){
+        round_up(part_1, part_2);
+    }
+    else{
+        document.getElementById('screen-text').innerHTML = value;
+    }
+}
+function round_up(whole_number, fraction){
+    let fraction_string =  fraction.toString();
+    let new_fraction = fraction_string.slice(0, 8);
+    whole_number = whole_number.toString();
+    if (Number(new_fraction.slice(-1))>4){
+        // add 1
+        new_fraction = new_fraction.slice(0,-1);
+        new_fraction = Number(new_fraction) + 1;
+        new_fraction = new_fraction.toString();
+        let new_decimal =  Number((whole_number + '.' + new_fraction));
+        document.getElementById('screen-text').innerHTML = new_decimal;
+    }
+    else{
+        new_fraction = new_fraction.slice(0,-1);
+        new_fraction = new_fraction.toString();
+        let new_decimal =  Number((whole_number + '.' + new_fraction));
+        document.getElementById('screen-text').innerHTML = new_decimal;
+    }
+}
 
 
