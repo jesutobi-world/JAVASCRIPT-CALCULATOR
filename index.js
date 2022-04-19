@@ -257,7 +257,7 @@ box_8.addEventListener('click', ()=>{
         new_string = screen_text;
     }
     else if (screen_text == '0'){
-        new_string = screen_text;
+        new_string = screen_text + '+';
     }
     else{
         new_string = screen_text + '+';
@@ -271,7 +271,7 @@ box_12.addEventListener('click', ()=>{
         new_string = screen_text;
     }
     else if (screen_text == '0'){
-        new_string = '-';
+        new_string = screen_text + '-';
     }
     else{
         new_string = screen_text + '-';
@@ -285,7 +285,7 @@ box_15.addEventListener('click', ()=>{
         new_string = screen_text;
     }
     else if (screen_text == '0'){
-        new_string = screen_text;
+        new_string = screen_text + '/';
     }
     else{
         new_string = screen_text + '/';
@@ -299,7 +299,7 @@ box_16.addEventListener('click', ()=>{
         new_string = screen_text;
     }
     else if (screen_text == '0'){
-        new_string = screen_text;
+        new_string = screen_text + '*';
     }
     else{
         new_string = screen_text + '*';
@@ -356,5 +356,4 @@ function round_up(whole_number, fraction){
         document.getElementById('screen-text').innerHTML = new_decimal;
     }
 }
-
 
