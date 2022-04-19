@@ -91,6 +91,7 @@ main{
     align-self: center;
     color: var(--white-text-1);
     letter-spacing: 2px;
+    font-weight: bolder;
 }
 .heading #toggle-section{
     display: flex;
@@ -105,6 +106,7 @@ main{
     padding-right: 3vw;
     padding-bottom: 1vw;
     color: var(--white-text-1);
+    font-weight: bolder;
 }
 #toggle-option{
     width: 65%;
@@ -126,13 +128,15 @@ main{
     border-radius: 7vw;
     display: flex;
     padding: 2.5vw;
+    align-items: center;
+    justify-content: flex-start;
 }
 #toggle-button{
-    height: 5vw;
-    width: 5vw;
+    height: 6vw;
+    width: 6vw;
     border-radius: 50%;
     background-color: var(--red-key-background-1);
-    align-self: center;
+    /* align-self: center; */
 }
 #screen{
     border-radius: 4vw;
@@ -217,3 +221,4 @@ main{
     color: var(--white-text-1);
     font-weight: 500;
 }
+
