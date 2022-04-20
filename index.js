@@ -31,7 +31,7 @@ let reset_box = document.getElementById('box-17');
 let equal_box = document.getElementById('box-18');
 let calc_text = document.getElementById('calc-text');
 let theme_text = document.getElementById('theme-text');
-let i;
+let valid_num = '';
 // toggle function
 let count = 1;
 toggle_div.addEventListener('click', ()=>{
@@ -119,6 +119,7 @@ toggle_div.addEventListener('click', ()=>{
 
 })
 box_1.addEventListener('click', ()=>{
+    valid_num = valid_num + '7';
     let screen_text = document.getElementById('screen-text').innerHTML;
     let new_string;
     if (screen_text == '0'){
@@ -130,6 +131,7 @@ box_1.addEventListener('click', ()=>{
     document.getElementById('screen-text').innerHTML = new_string;
 })
 box_2.addEventListener('click', ()=>{
+    valid_num = valid_num + '8';
     let screen_text = document.getElementById('screen-text').innerHTML;
     let new_string
     if (screen_text == '0'){
@@ -141,6 +143,7 @@ box_2.addEventListener('click', ()=>{
     document.getElementById('screen-text').innerHTML = new_string;
 })
 box_3.addEventListener('click', ()=>{
+    valid_num = valid_num + '9';
     let screen_text = document.getElementById('screen-text').innerHTML;
     let new_string
     if (screen_text == '0'){
@@ -152,6 +155,7 @@ box_3.addEventListener('click', ()=>{
     document.getElementById('screen-text').innerHTML = new_string;
 })
 box_5.addEventListener('click', ()=>{
+    valid_num = valid_num + '4';
     let screen_text = document.getElementById('screen-text').innerHTML;
     let new_string
     if (screen_text == '0'){
@@ -163,6 +167,7 @@ box_5.addEventListener('click', ()=>{
     document.getElementById('screen-text').innerHTML = new_string;
 })
 box_6.addEventListener('click', ()=>{
+    valid_num = valid_num + '5';
     let screen_text = document.getElementById('screen-text').innerHTML;
     let new_string
     if (screen_text == '0'){
@@ -174,6 +179,7 @@ box_6.addEventListener('click', ()=>{
     document.getElementById('screen-text').innerHTML = new_string;
 })
 box_7.addEventListener('click', ()=>{
+    valid_num = valid_num + '6';
     let screen_text = document.getElementById('screen-text').innerHTML;
     let new_string
     if (screen_text == '0'){
@@ -185,6 +191,7 @@ box_7.addEventListener('click', ()=>{
     document.getElementById('screen-text').innerHTML = new_string;
 })
 box_9.addEventListener('click', ()=>{
+    valid_num = valid_num + '1';
     let screen_text = document.getElementById('screen-text').innerHTML;
     let new_string
     if (screen_text == '0'){
@@ -196,6 +203,7 @@ box_9.addEventListener('click', ()=>{
     document.getElementById('screen-text').innerHTML = new_string;
 })
 box_10.addEventListener('click', ()=>{
+    valid_num = valid_num + '2';
     let screen_text = document.getElementById('screen-text').innerHTML;
     let new_string
     if (screen_text == '0'){
@@ -207,6 +215,7 @@ box_10.addEventListener('click', ()=>{
     document.getElementById('screen-text').innerHTML = new_string;
 })
 box_11.addEventListener('click', ()=>{
+    valid_num = valid_num + '3';
     let screen_text = document.getElementById('screen-text').innerHTML;
     let new_string;
     if (screen_text == '0'){
@@ -217,21 +226,22 @@ box_11.addEventListener('click', ()=>{
     }
     document.getElementById('screen-text').innerHTML = new_string;
 })
+// decimal point
 box_13.addEventListener('click', ()=>{
     let screen_text = document.getElementById('screen-text').innerHTML;
     let new_string;
-    if (screen_text.includes('.')){
+    if (valid_num.includes('.')){
         new_string = screen_text;
-    }
-    else if (screen_text == '0'){
-        new_string = '0.';
     }
     else{
         new_string = screen_text + '.';
+        valid_num = valid_num + '.';
     }
     document.getElementById('screen-text').innerHTML = new_string;
 })
+// zero
 box_14.addEventListener('click', ()=>{
+    valid_num = valid_num + '0';
     let screen_text = document.getElementById('screen-text').innerHTML;
     let new_string;
     if (screen_text == '0'){
@@ -242,20 +252,32 @@ box_14.addEventListener('click', ()=>{
     }
     document.getElementById('screen-text').innerHTML = new_string;
 })
+// delete
 box_4.addEventListener('click', ()=>{
     let screen_text = document.getElementById('screen-text').innerHTML;
     document.getElementById('screen-text').innerHTML = screen_text.slice(0,-1);
 })
+// reset
 box_17.addEventListener('click', ()=>{
-    let screen_text = document.getElementById('screen-text').innerHTML;
-    document.getElementById('screen-text').innerHTML = '0';
+    document.getElementById('screen-text').innerHTML = '';
 })
+// addition
 box_8.addEventListener('click', ()=>{
+    valid_num = '';
     let screen_text = document.getElementById('screen-text').innerHTML;
     let new_string;
     if (screen_text.slice(-1) == '+'){
         new_string = screen_text;
     }
+    else if (screen_text.slice(-1) == '-'){
+        new_string = screen_text.slice(0, -1) + '+';
+    }
+    else if (screen_text.slice(-1) == '/'){
+        new_string = screen_text.slice(0, -1) + '+';
+    }
+    else if (screen_text.slice(-1) == '*'){
+        new_string = screen_text.slice(0, -1) + '+';
+    }
     else if (screen_text == '0'){
         new_string = screen_text + '+';
     }
@@ -264,12 +286,17 @@ box_8.addEventListener('click', ()=>{
     }
     document.getElementById('screen-text').innerHTML = new_string;
 })
+// subtraction
 box_12.addEventListener('click', ()=>{
+    valid_num = '';
     let screen_text = document.getElementById('screen-text').innerHTML;
     let new_string;
     if (screen_text.slice(-1) == '-'){
         new_string = screen_text;
     }
+    else if (screen_text.slice(-1) == '+'){
+        new_string = screen_text.slice(0, -1) + '-';
+    }
     else if (screen_text == '0'){
         new_string = screen_text + '-';
     }
@@ -278,12 +305,23 @@ box_12.addEventListener('click', ()=>{
     }
     document.getElementById('screen-text').innerHTML = new_string;
 })
+// division
 box_15.addEventListener('click', ()=>{
+    valid_num = '';
     let screen_text = document.getElementById('screen-text').innerHTML;
     let new_string;
     if (screen_text.slice(-1) == '/'){
         new_string = screen_text;
     }
+    else if (screen_text.slice(-1) == '*'){
+        new_string = screen_text.slice(0, -1) + '/';
+    }
+    else if (screen_text.slice(-1) == '+'){
+        new_string = screen_text.slice(0, -1) + '/';
+    }
+    else if (screen_text.slice(-1) == '-'){
+        new_string = screen_text.slice(0, -1) + '/';
+    }
     else if (screen_text == '0'){
         new_string = screen_text + '/';
     }
@@ -292,11 +330,22 @@ box_15.addEventListener('click', ()=>{
     }
     document.getElementById('screen-text').innerHTML = new_string;
 })
+// multiplication
 box_16.addEventListener('click', ()=>{
+    valid_num = '';
     let screen_text = document.getElementById('screen-text').innerHTML;
     let new_string;
     if (screen_text.slice(-1) == '*'){
         new_string = screen_text;
+    }
+    else if (screen_text.slice(-1) == '/'){
+        new_string = screen_text.slice(0, -1) + '*';
+    }
+    else if (screen_text.slice(-1) == '-'){
+        new_string = screen_text.slice(0, -1) + '*';
+    }
+    else if (screen_text.slice(-1) == '+'){
+        new_string = screen_text.slice(0, -1) + '*';
     }
     else if (screen_text == '0'){
         new_string = screen_text + '*';
