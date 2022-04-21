@@ -236,10 +236,10 @@ main{
         padding: 0;
     }
     main{
-        width: 30%;
-        height: 91%;
-        grid-template-rows: 0.5fr 2.5fr 12fr;
-        gap: 1.5vw;
+        width: 33%;
+        height: 93%;
+        grid-template-rows: 0.5fr 2.9fr 15fr;
+        gap: 1.3vw;
     }
     .heading h1{
         font-size:3vw;
@@ -269,12 +269,12 @@ main{
         font-size: 3vw;
     }
     #keypad{
-        padding: 2vw;
-        gap: 1.7vw;
+        padding: 1.8vw;
+        gap: 1.8vw;
         border-radius: 1vw;
     }
     .box{
-        box-shadow: 0.05vw 0.25vw 0 var(--gray-key-shadow);
+        box-shadow: 0.05vw 0.26vw 0 var(--gray-key-shadow);
         font-size: 2.5vw;
         border-radius: 0.5vw;
     }
@@ -286,16 +286,17 @@ main{
         gap: 1.7vw;
     }
     #box-4{
-        box-shadow: 0.05vw 0.25vw 0 var(--blue-key-shadow-1);
+        box-shadow: 0.05vw 0.26vw 0 var(--blue-key-shadow-1);
         font-size: 1.5vw;
     }
     #box-17{
         font-size: 1.5vw;
-        box-shadow: 0.05vw 0.25vw 0 var(--blue-key-shadow-1);
+        box-shadow: 0.05vw 0.26vw 0 var(--blue-key-shadow-1);
     }
     #box-18{
         font-size: 1.5vw;
-        box-shadow: 0.05vw 0.25vw 0 var(--red-key-shadow-1);
+        box-shadow: 0.05vw 0.26vw 0 var(--red-key-shadow-1);
     }
 }
+
 
