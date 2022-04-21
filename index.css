@@ -154,6 +154,13 @@ main{
     color: var(--white-text-1);
     overflow-x: scroll;
 }
+#screen h3 {
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+}
+#screen h3::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
+}
 #keypad{
     padding: 6vw;
     display: grid;
@@ -220,5 +227,75 @@ main{
     box-shadow: 0.1vw 1.3vw 0 var(--red-key-shadow-1);
     color: var(--white-text-1);
     font-weight: 500;
+}
+/* LAPTOP AND DESKTOP STYLES */
+@media(min-width: 769px){
+    body{
+        height: 100vh;
+        width: 100vw;
+        padding: 0;
+    }
+    main{
+        width: 30%;
+        height: 91%;
+        grid-template-rows: 0.5fr 2.5fr 12fr;
+        gap: 1.5vw;
+    }
+    .heading h1{
+        font-size:3vw;
+    }
+    .heading #toggle-section{
+        width: 54%;
+    }
+    .heading #toggle-section h2{
+        font-size: 1.2vw;
+        padding-bottom: 0.6vw;
+    }
+    #toggle-section ul{
+        font-size: 1.2vw;
+    }
+    #toggle-div{
+        height: 2vw;
+        padding: 0.6vw;
+    }
+    #toggle-button{
+        height: 1.2vw;
+        width: 1.2vw;
+    }
+    #screen{
+        border-radius: 1vw;
+    }
+    #screen h3{
+        font-size: 3vw;
+    }
+    #keypad{
+        padding: 2vw;
+        gap: 1.7vw;
+        border-radius: 1vw;
+    }
+    .box{
+        box-shadow: 0.05vw 0.25vw 0 var(--gray-key-shadow);
+        font-size: 2.5vw;
+        border-radius: 0.5vw;
+    }
+    #row-1,
+    #row-2,
+    #row-3,
+    #row-4,
+    #row-5{
+        gap: 1.7vw;
+    }
+    #box-4{
+        box-shadow: 0.05vw 0.25vw 0 var(--blue-key-shadow-1);
+        font-size: 1.5vw;
+    }
+    #box-17{
+        font-size: 1.5vw;
+        box-shadow: 0.05vw 0.25vw 0 var(--blue-key-shadow-1);
+    }
+    #box-18{
+        font-size: 1.5vw;
+        box-shadow: 0.05vw 0.25vw 0 var(--red-key-shadow-1);
+    }
 }
 
