@@ -290,7 +290,7 @@ box_14.addEventListener('click', ()=>{
     valid_num = valid_num + '0';
     let screen_text = document.getElementById('screen-text').innerHTML;
     let new_string;
-    if (screen_text == ''){
+    if (screen_text == '' || screen_text == '0'){
         new_string = '0';
         comma_check = comma_check;
     }
