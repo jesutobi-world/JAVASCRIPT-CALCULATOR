@@ -56,12 +56,26 @@
     --light-yellow-text: hsl(52, 100%, 62%);
     --very-dark-blue-text: hsl(198, 20%, 13%);
     --white-text-3: hsl(0, 0, 100%);
+    /*box shadow values */
+    --boxes-shadow-1: 0.1vw 1.3vw 0  hsl(28, 16%, 65%);
+    --del-shadow-1: 0.1vw 1.3vw 0 hsl(224, 28%, 35%);
+    --reset-shadow-1: 0.1vw 1.3vw 0 hsl(224, 28%, 35%);
+    --equal-shadow-1: 0.1vw 1.3vw 0 hsl(6, 70%, 34%);
+    --boxes-shadow-2: 0.1vw 1.3vw 0 hsl(35, 11%, 61%);
+    --del-shadow-2: 0.1vw 1.3vw 0 hsl(185, 58%, 25%);
+    --reset-shadow-2:0.1vw 1.3vw 0 hsl(185, 58%, 25%);
+    --equal-shadow-2: 0.1vw 1.3vw 0 hsl(25, 99%, 27%);
+    --boxes-shadow-3:0.1vw 1.3vw 0 hsl(290, 70%, 36%);
+    --del-shadow-3:0.1vw 1.3vw 0 hsl(285, 91%, 52%);
+    --reset-shadow-3:0.1vw 1.3vw 0 hsl(285, 91%, 52%);
+    --equal-shadow-3:0.1vw 1.3vw 0 hsl(177, 92%, 70%);
 }
 *{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
+
 body{
     font-family: 'League Spartan', sans-serif;
     background-color: var(--main-background-1);
@@ -230,16 +244,31 @@ main{
 }
 /* LAPTOP AND DESKTOP STYLES */
 @media(min-width: 769px){
+    :root{
+            /*box shadow values */
+    --boxes-shadow-1: 0.1vw 0.3vw 0  hsl(28, 16%, 65%);
+    --del-shadow-1: 0.1vw 0.3vw 0 hsl(224, 28%, 35%);
+    --reset-shadow-1: 0.1vw 0.3vw 0 hsl(224, 28%, 35%);
+    --equal-shadow-1: 0.1vw 0.3vw 0 hsl(6, 70%, 34%);
+    --boxes-shadow-2: 0.1vw 0.3vw 0 hsl(35, 11%, 61%);
+    --del-shadow-2: 0.1vw 0.3vw 0 hsl(185, 58%, 25%);
+    --reset-shadow-2:0.1vw 0.3vw 0 hsl(185, 58%, 25%);
+    --equal-shadow-2: 0.1vw 0.3vw 0 hsl(25, 99%, 27%);
+    --boxes-shadow-3:0.1vw 0.3vw 0 hsl(290, 70%, 36%);
+    --del-shadow-3:0.1vw 0.3vw 0 hsl(285, 91%, 52%);
+    --reset-shadow-3:0.1vw 0.3vw 0 hsl(285, 91%, 52%);
+    --equal-shadow-3:0.1vw 0.3vw 0 hsl(177, 92%, 70%);
+    }
     body{
         height: 100vh;
         width: 100vw;
-        padding: 0;
+        padding: 1vw 2vw;
     }
     main{
         width: 33%;
         height: 93%;
-        grid-template-rows: 0.5fr 2.9fr 15fr;
-        gap: 1.3vw;
+        grid-template-rows: 0.5fr 2.9fr 14fr;
+        gap: 2vw;
     }
     .heading h1{
         font-size:3vw;
