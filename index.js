@@ -32,7 +32,6 @@ let equal_box = document.getElementById('box-18');
 let calc_text = document.getElementById('calc-text');
 let theme_text = document.getElementById('theme-text');
 let valid_num = '';
-let comma_check=0;
 // toggle function
 let count = 1;
 toggle_div.addEventListener('click', ()=>{
@@ -129,11 +128,6 @@ box_1.addEventListener('click', ()=>{
     else{
         new_string = screen_text + '7';
     }
-    comma_check = comma_check +1;
-    if (comma_check == 3){
-        new_string = new_string + ','
-        comma_check = 0;
-    }
     document.getElementById('screen-text').innerHTML = new_string;
 })
 box_2.addEventListener('click', ()=>{
@@ -145,11 +139,6 @@ box_2.addEventListener('click', ()=>{
     }
     else{
         new_string = screen_text + '8';
-    }
-    comma_check = comma_check +1;
-    if (comma_check == 3){
-        new_string = new_string + ','
-        comma_check = 0;
     }
     document.getElementById('screen-text').innerHTML = new_string;
 })
@@ -163,11 +152,6 @@ box_3.addEventListener('click', ()=>{
     else{
         new_string = screen_text + '9';
     }
-    comma_check = comma_check +1;
-    if (comma_check == 3){
-        new_string = new_string + ','
-        comma_check = 0;
-    }
     document.getElementById('screen-text').innerHTML = new_string;
 })
 box_5.addEventListener('click', ()=>{
@@ -179,11 +163,6 @@ box_5.addEventListener('click', ()=>{
     }
     else{
         new_string = screen_text + '4';
-    }
-    comma_check = comma_check +1;
-    if (comma_check == 3){
-        new_string = new_string + ','
-        comma_check = 0;
     }
     document.getElementById('screen-text').innerHTML = new_string;
 })
@@ -197,11 +176,6 @@ box_6.addEventListener('click', ()=>{
     else{
         new_string = screen_text + '5';
     }
-    comma_check = comma_check +1;
-    if (comma_check == 3){
-        new_string = new_string + ','
-        comma_check = 0;
-    }
     document.getElementById('screen-text').innerHTML = new_string;
 })
 box_7.addEventListener('click', ()=>{
@@ -213,11 +187,6 @@ box_7.addEventListener('click', ()=>{
     }
     else{
         new_string = screen_text + '6';
-    }
-    comma_check = comma_check +1;
-    if (comma_check == 3){
-        new_string = new_string + ','
-        comma_check = 0;
     }
     document.getElementById('screen-text').innerHTML = new_string;
 })
@@ -231,11 +200,6 @@ box_9.addEventListener('click', ()=>{
     else{
         new_string = screen_text + '1';
     }
-    comma_check = comma_check +1;
-    if (comma_check == 3){
-        new_string = new_string + ','
-        comma_check = 0;
-    }
     document.getElementById('screen-text').innerHTML = new_string;
 })
 box_10.addEventListener('click', ()=>{
@@ -248,11 +212,6 @@ box_10.addEventListener('click', ()=>{
     else{
         new_string = screen_text + '2';
     }
-    comma_check = comma_check +1;
-    if (comma_check == 3){
-        new_string = new_string + ','
-        comma_check = 0;
-    }
     document.getElementById('screen-text').innerHTML = new_string;
 })
 box_11.addEventListener('click', ()=>{
@@ -264,11 +223,6 @@ box_11.addEventListener('click', ()=>{
     }
     else{
         new_string = screen_text + '3';
-    }
-    comma_check = comma_check +1;
-    if (comma_check == 3){
-        new_string = new_string + ','
-        comma_check = 0;
     }
     document.getElementById('screen-text').innerHTML = new_string;
 })
@@ -292,15 +246,9 @@ box_14.addEventListener('click', ()=>{
     let new_string;
     if (screen_text == '' || screen_text == '0'){
         new_string = '0';
-        comma_check = comma_check;
     }
     else{
         new_string = screen_text + '0';
-        comma_check = comma_check +1;
-    }
-    if (comma_check == 3){
-        new_string = new_string + ','
-        comma_check = 0;
     }
     document.getElementById('screen-text').innerHTML = new_string;
 })
