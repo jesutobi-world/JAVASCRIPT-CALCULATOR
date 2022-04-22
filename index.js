@@ -32,6 +32,7 @@ let equal_box = document.getElementById('box-18');
 let calc_text = document.getElementById('calc-text');
 let theme_text = document.getElementById('theme-text');
 let valid_num = '';
+let comma_check=0;
 // toggle function
 let count = 1;
 toggle_div.addEventListener('click', ()=>{
@@ -45,17 +46,17 @@ toggle_div.addEventListener('click', ()=>{
         screen.style.backgroundColor = 'hsl(224, 36%, 15%)';
         for (let i = 0; i<boxes.length; i++){
             boxes[i].style.backgroundColor = 'hsl(30, 25%, 89%)';
-            boxes[i].style.boxShadow = '0.1vw 1.3vw 0  hsl(28, 16%, 65%';
+            boxes[i].style.boxShadow = 'var(--boxes-shadow-1)';
             boxes[i].style.color = 'hsl(221, 14%, 31%)';
         }
         del_box.style.backgroundColor='hsl(225, 21%, 49%)';
-        del_box.style.boxShadow='0.1vw 1.3vw 0 hsl(224, 28%, 35%)';
+        del_box.style.boxShadow='var(--del-shadow-1)';
         del_box.style.color = 'white';
         reset_box.style.backgroundColor='hsl(225, 21%, 49%)';
-        reset_box.style.boxShadow='0.1vw 1.3vw 0 hsl(224, 28%, 35%)';
+        reset_box.style.boxShadow='var(--reset-shadow-1)';
         reset_box.style.color = 'white';
         equal_box.style.backgroundColor='hsl(6, 63%, 50%)';
-        equal_box.style.boxShadow='0.1vw 1.3vw 0 hsl(6, 70%, 34%)';
+        equal_box.style.boxShadow='var(--equal-shadow-1)';
         equal_box.style.color = 'white';
         text.style.color = 'white';
         toggle_list.style.color = 'white';
@@ -72,17 +73,17 @@ toggle_div.addEventListener('click', ()=>{
         screen.style.backgroundColor = 'hsl(0, 0%, 93%)';
         for (let i = 0; i<boxes.length; i++){
             boxes[i].style.backgroundColor = 'hsl(45, 7%, 89%)';
-            boxes[i].style.boxShadow = '0.1vw 1.3vw 0 hsl(35, 11%, 61%)';
+            boxes[i].style.boxShadow = 'var(--boxes-shadow-2)';
             boxes[i].style.color = 'hsl(60, 10%, 19%)';
         }
         del_box.style.backgroundColor='hsl(185, 42%, 37%)';
-        del_box.style.boxShadow='0.1vw 1.3vw 0 hsl(185, 58%, 25%)';
+        del_box.style.boxShadow='var(--del-shadow-2)';
         del_box.style.color = 'white';
         reset_box.style.backgroundColor='hsl(185, 42%, 37%)';
-        reset_box.style.boxShadow='0.1vw 1.3vw 0 hsl(185, 58%, 25%)';
+        reset_box.style.boxShadow='var(--reset-shadow-2)';
         reset_box.style.color = 'white';
         equal_box.style.backgroundColor='hsl(25, 98%, 40%)';
-        equal_box.style.boxShadow='0.1vw 1.3vw 0 hsl(25, 99%, 27%)';
+        equal_box.style.boxShadow='var(--equal-shadow-2)';
         equal_box.style.color = 'white';
         text.style.color = ' hsl(60, 10%, 19%)';
         toggle_list.style.color = ' hsl(60, 10%, 19%)';
@@ -99,17 +100,17 @@ toggle_div.addEventListener('click', ()=>{
         screen.style.backgroundColor = 'hsl(268, 71%, 12%)';
         for (let i = 0; i<boxes.length; i++){
             boxes[i].style.backgroundColor = 'hsl(268, 47%, 21%)';
-            boxes[i].style.boxShadow = '0.1vw 1.3vw 0 hsl(290, 70%, 36%)';
+            boxes[i].style.boxShadow = 'var(--boxes-shadow-3)';
             boxes[i].style.color = 'hsl(52, 100%, 62%)';
         }
         del_box.style.backgroundColor='hsl(281, 89%, 26%)';
-        del_box.style.boxShadow='0.1vw 1.3vw 0 hsl(285, 91%, 52%)';
+        del_box.style.boxShadow='var(--del-shadow-3)';
         del_box.style.color = 'white';
         reset_box.style.backgroundColor='hsl(281, 89%, 26%)';
-        reset_box.style.boxShadow='0.1vw 1.3vw 0 hsl(285, 91%, 52%)';
+        reset_box.style.boxShadow='var(--reset-shadow-3)';
         reset_box.style.color = 'white';
         equal_box.style.backgroundColor='hsl(176, 100%, 44%)';
-        equal_box.style.boxShadow='0.1vw 1.3vw 0 hsl(177, 92%, 70%)';
+        equal_box.style.boxShadow='var(--equal-shadow-3)';
         equal_box.style.color = 'hsl(198, 20%, 13%)';
         text.style.color = ' hsl(52, 100%, 62%)';
         toggle_list.style.color = ' hsl(52, 100%, 62%)';
@@ -128,6 +129,11 @@ box_1.addEventListener('click', ()=>{
     else{
         new_string = screen_text + '7';
     }
+    comma_check = comma_check +1;
+    if (comma_check == 3){
+        new_string = new_string + ','
+        comma_check = 0;
+    }
     document.getElementById('screen-text').innerHTML = new_string;
 })
 box_2.addEventListener('click', ()=>{
@@ -139,6 +145,11 @@ box_2.addEventListener('click', ()=>{
     }
     else{
         new_string = screen_text + '8';
+    }
+    comma_check = comma_check +1;
+    if (comma_check == 3){
+        new_string = new_string + ','
+        comma_check = 0;
     }
     document.getElementById('screen-text').innerHTML = new_string;
 })
@@ -152,6 +163,11 @@ box_3.addEventListener('click', ()=>{
     else{
         new_string = screen_text + '9';
     }
+    comma_check = comma_check +1;
+    if (comma_check == 3){
+        new_string = new_string + ','
+        comma_check = 0;
+    }
     document.getElementById('screen-text').innerHTML = new_string;
 })
 box_5.addEventListener('click', ()=>{
@@ -163,6 +179,11 @@ box_5.addEventListener('click', ()=>{
     }
     else{
         new_string = screen_text + '4';
+    }
+    comma_check = comma_check +1;
+    if (comma_check == 3){
+        new_string = new_string + ','
+        comma_check = 0;
     }
     document.getElementById('screen-text').innerHTML = new_string;
 })
@@ -176,6 +197,11 @@ box_6.addEventListener('click', ()=>{
     else{
         new_string = screen_text + '5';
     }
+    comma_check = comma_check +1;
+    if (comma_check == 3){
+        new_string = new_string + ','
+        comma_check = 0;
+    }
     document.getElementById('screen-text').innerHTML = new_string;
 })
 box_7.addEventListener('click', ()=>{
@@ -187,6 +213,11 @@ box_7.addEventListener('click', ()=>{
     }
     else{
         new_string = screen_text + '6';
+    }
+    comma_check = comma_check +1;
+    if (comma_check == 3){
+        new_string = new_string + ','
+        comma_check = 0;
     }
     document.getElementById('screen-text').innerHTML = new_string;
 })
@@ -200,6 +231,11 @@ box_9.addEventListener('click', ()=>{
     else{
         new_string = screen_text + '1';
     }
+    comma_check = comma_check +1;
+    if (comma_check == 3){
+        new_string = new_string + ','
+        comma_check = 0;
+    }
     document.getElementById('screen-text').innerHTML = new_string;
 })
 box_10.addEventListener('click', ()=>{
@@ -212,6 +248,11 @@ box_10.addEventListener('click', ()=>{
     else{
         new_string = screen_text + '2';
     }
+    comma_check = comma_check +1;
+    if (comma_check == 3){
+        new_string = new_string + ','
+        comma_check = 0;
+    }
     document.getElementById('screen-text').innerHTML = new_string;
 })
 box_11.addEventListener('click', ()=>{
@@ -223,6 +264,11 @@ box_11.addEventListener('click', ()=>{
     }
     else{
         new_string = screen_text + '3';
+    }
+    comma_check = comma_check +1;
+    if (comma_check == 3){
+        new_string = new_string + ','
+        comma_check = 0;
     }
     document.getElementById('screen-text').innerHTML = new_string;
 })
@@ -244,11 +290,17 @@ box_14.addEventListener('click', ()=>{
     valid_num = valid_num + '0';
     let screen_text = document.getElementById('screen-text').innerHTML;
     let new_string;
-    if (screen_text == '0'){
+    if (screen_text == ''){
         new_string = '0';
+        comma_check = comma_check;
     }
     else{
         new_string = screen_text + '0';
+        comma_check = comma_check +1;
+    }
+    if (comma_check == 3){
+        new_string = new_string + ','
+        comma_check = 0;
     }
     document.getElementById('screen-text').innerHTML = new_string;
 })
@@ -405,4 +457,8 @@ function round_up(whole_number, fraction){
         document.getElementById('screen-text').innerHTML = new_decimal;
     }
 }
+
+
+
+
 
